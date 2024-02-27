@@ -6,24 +6,18 @@ public class Asteroid : MonoBehaviour
 {
     public int hp;
     public int pontos;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject Explosao;
 
     public void TomouDano(int dano) {
 
         hp = hp - dano;
         if (hp < 0)
         {
+            GameObject Exp = Instantiate(Explosao, transform.position,
+                Quaternion.identity);
+            //Destroi explosão
+            Destroy(Exp, 0.4f);
+            //AutoDestroi Asteroid
             Destroy(gameObject);
         }
     

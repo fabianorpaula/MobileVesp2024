@@ -163,3 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   pontos: 10
+  Explosao: {fileID: 3308281666907242994, guid: 522323d022e383740b01a74eaaf59090, type: 3}
