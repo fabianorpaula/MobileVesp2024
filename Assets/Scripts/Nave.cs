@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Nave : MonoBehaviour
 {
-
-
+    private float meuTempo;
+    public GameObject Missil;
 
     private void Update()
     {
         SeguirDedo();
+        Disparar();
     }
 
 
@@ -43,6 +44,19 @@ public class Nave : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position,
                 posTelaCorrigida, 0.01f);
 
+        }
+    }
+
+    public void Disparar()
+    {
+        meuTempo += Time.deltaTime;
+        if (meuTempo > 0.7f)
+        {
+            Vector3 Arma1 = new Vector3(transform.position.x - 0.5f,
+                transform.position.y, transform.position.z);
+            GameObject Arma = Instantiate(Missil, Arma1,Quaternion.identity);
+            Destroy(Arma, 3f);
+            meuTempo = 0;
         }
     }
 
