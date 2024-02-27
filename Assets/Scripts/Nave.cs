@@ -52,10 +52,17 @@ public class Nave : MonoBehaviour
         meuTempo += Time.deltaTime;
         if (meuTempo > 0.7f)
         {
+            ///Tiro1
             Vector3 Arma1 = new Vector3(transform.position.x - 0.5f,
                 transform.position.y, transform.position.z);
-            GameObject Arma = Instantiate(Missil, Arma1,Quaternion.identity);
-            Destroy(Arma, 3f);
+            GameObject ArmaLancada1 = Instantiate(Missil, Arma1,Quaternion.identity);
+            Destroy(ArmaLancada1, 3f);
+            ///Tiro2
+            Vector3 Arma2 = new Vector3(transform.position.x + 0.5f,
+                transform.position.y, transform.position.z);
+            GameObject ArmaLancada2 = Instantiate(Missil, Arma2, Quaternion.identity);
+            Destroy(ArmaLancada2, 3f);
+
             meuTempo = 0;
         }
     }

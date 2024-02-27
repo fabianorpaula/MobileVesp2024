@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 965216118554748430}
   - component: {fileID: 2076290297736470365}
   - component: {fileID: 5438891462898979343}
+  - component: {fileID: -314104383422071142}
   m_Layer: 0
   m_Name: MeuMissil
   m_TagString: Untagged
@@ -202,3 +203,16 @@ ConstantForce2D:
   m_Force: {x: 0, y: 5}
   m_RelativeForce: {x: 0, y: 20}
   m_Torque: 0
+--- !u!114 &-314104383422071142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920919627794997047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fd13e327e21984a8b37d03b933d94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano: 3

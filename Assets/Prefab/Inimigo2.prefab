@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6701593781404654226}
   - component: {fileID: 4499758616008537154}
   - component: {fileID: 84019855790110432}
+  - component: {fileID: -5944702354654772602}
   m_Layer: 0
   m_Name: Inimigo2
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +149,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-5944702354654772602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599843815728691785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cfe4bfb4415fb49bdf1ad9eaf1006e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 2
+  pontos: 20
