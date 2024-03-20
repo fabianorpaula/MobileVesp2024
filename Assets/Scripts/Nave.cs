@@ -7,12 +7,42 @@ public class Nave : MonoBehaviour
     private float meuTempo;
     public GameObject Missil;
 
+    public List<Sprite> Aeronaves;
+    private ControlaJogo CJ;
+    private void Start()
+    {
+        CJ = GameObject.FindGameObjectWithTag("GameController").
+                 GetComponent<ControlaJogo>();
+        GetComponent<SpriteRenderer>().sprite = Aeronaves[0];
+    }
+
     private void Update()
     {
         SeguirDedo();
         Disparar();
+        EscolherNave();
     }
 
+
+    public void EscolherNave()
+    {
+        float pontoQEUTenho = CJ.pontos;
+        if(pontoQEUTenho > 1000)
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[3];
+        }else if(pontoQEUTenho > 500)
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[2];
+        }
+        else if (pontoQEUTenho > 100)
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[1];
+        }
+        else
+        {
+           GetComponent<SpriteRenderer>().sprite = Aeronaves[0];
+        }
+    }
 
     public void Mover(string lado)
     {
