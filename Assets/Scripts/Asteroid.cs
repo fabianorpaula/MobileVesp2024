@@ -13,6 +13,10 @@ public class Asteroid : MonoBehaviour
         hp = hp - dano;
         if (hp < 0)
         {
+            ControlaJogo CJ = GameObject.FindGameObjectWithTag("GameController").
+                GetComponent<ControlaJogo>();
+
+            CJ.GanhaPonto(pontos);
             GameObject Exp = Instantiate(Explosao, transform.position,
                 Quaternion.identity);
             //Destroi explosão
