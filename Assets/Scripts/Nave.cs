@@ -98,4 +98,13 @@ public class Nave : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter2D(Collider2D colidiu)
+    {
+        if(colidiu.gameObject.tag == "Moeda") {
+            
+            Destroy(colidiu.gameObject);
+            CJ.GanhaMoeda(5);
+        }
+    }
+
 }
