@@ -164,3 +164,4 @@ MonoBehaviour:
   hp: 2
   pontos: 20
   Explosao: {fileID: 3308281666907242994, guid: 522323d022e383740b01a74eaaf59090, type: 3}
+  Moeda: {fileID: 423287641731026533, guid: 05784d99bf30cf74f9c6374b1ea07fa5, type: 3}
