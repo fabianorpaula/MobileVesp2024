@@ -18,9 +18,13 @@ public class Nave : MonoBehaviour
 
     private void Update()
     {
-        SeguirDedo();
-        Disparar();
-        EscolherNave();
+        if(CJ.gameLigado == true)
+        {
+            SeguirDedo();
+            Disparar();
+            EscolherNave();
+        }
+        
     }
 
 
@@ -104,6 +108,12 @@ public class Nave : MonoBehaviour
             
             Destroy(colidiu.gameObject);
             CJ.GanhaMoeda(5);
+        }
+
+        if(colidiu.gameObject.tag == "Asteroid")
+        {
+            Destroy(colidiu.gameObject);
+            CJ.TomarDano();
         }
     }
 

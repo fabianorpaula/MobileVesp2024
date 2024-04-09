@@ -6,6 +6,9 @@ public class ControlaJogo : MonoBehaviour
 {
     public float pontos;
     public float moedas;
+    public float armadura = 3;
+    public bool gameLigado = true;
+    public GameObject TelagameOver;
 
     private void Start()
     {
@@ -34,6 +37,22 @@ public class ControlaJogo : MonoBehaviour
         moedas = PlayerPrefs.GetFloat("Moeda");
         moedas = moedas + novamoeda;
         PlayerPrefs.SetFloat("Moeda", moedas);
+    }
+
+    public void TomarDano()
+    {
+        armadura--;
+        if(armadura <= 0)
+        {
+            PararJogo();
+            TelagameOver.SetActive(true);
+        }
+    }
+
+    public void PararJogo()
+    {
+        gameLigado = false;
+        Time.timeScale = 0;
     }
 
 }
