@@ -6,9 +6,14 @@ public class Banco : MonoBehaviour
 {
 
     public float MeuCaixa;
+
+   
     // Start is called before the first frame update
     void Start()
     {
+        ///Esse comando apaga tudo
+        ///////PlayerPrefs.DeleteAll();
+
         MeuCaixa = PlayerPrefs.GetFloat("Moeda");
         
 
@@ -67,8 +72,7 @@ public class Banco : MonoBehaviour
             MeuCaixa = MeuCaixa - custo;
             PlayerPrefs.SetFloat("Moeda", MeuCaixa);
             PlayerPrefs.SetString("NaveEscolhida", tiponave);
-            Debug.Log("ENtrei");
-            //Debug.Log(PlayerPrefs.GetString("NaveEscolhida"));
+            BotaoComprado(tipo);
 
         }
         else
@@ -77,5 +81,62 @@ public class Banco : MonoBehaviour
         }
 
     }
+
+
+    public void Selecionar(int tipo)
+    {
+        
+        string tiponave = "";
+        //Informações
+        switch (tipo)
+        {
+            case 1:
+                //nave roxa
+                
+                tiponave = "Azul";
+                PlayerPrefs.SetString("NaveEscolhida", tiponave);
+                break;
+            case 2:
+                //nave roxa
+                
+                tiponave = "Vermelha";
+                PlayerPrefs.SetString("NaveEscolhida", tiponave);
+                break;
+            case 3:
+                //nave roxa
+                
+                tiponave = "Roxa";
+                PlayerPrefs.SetString("NaveEscolhida", tiponave);
+                break;
+            default:
+                
+                tiponave = "Basica";
+                break;
+
+        }
+
+    }
+
+    void BotaoComprado(int numeroBotao)
+    {
+        switch(numeroBotao)
+        {
+
+            case 1:
+                PlayerPrefs.SetString("Botao1", "Comprado");
+                break;
+            case 2:
+                PlayerPrefs.SetString("Botao2", "Comprado");
+                break;
+            case 3:
+                PlayerPrefs.SetString("Botao3", "Comprado");
+                break;
+
+        }
+    }
+
+
+
+
 
 }
