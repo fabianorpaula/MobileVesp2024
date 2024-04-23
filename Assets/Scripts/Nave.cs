@@ -30,6 +30,8 @@ public class Nave : MonoBehaviour
 
     public void EscolherNave()
     {
+        //JeitoAntigo
+        /*
         float pontoQEUTenho = CJ.pontos;
         if(pontoQEUTenho > 1000)
         {
@@ -45,6 +47,28 @@ public class Nave : MonoBehaviour
         else
         {
            GetComponent<SpriteRenderer>().sprite = Aeronaves[0];
+        }*/
+
+        //JeitoNovo
+
+        string naveAtual = PlayerPrefs.GetString("NaveEscolhida");
+        Debug.Log(naveAtual);
+        if (naveAtual == "Basica")
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[0];
+        }
+        if (naveAtual == "Azul")
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[1];
+        }
+        if (naveAtual == "Vermelha")
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[2];
+        }
+
+        if (naveAtual == "Roxa")
+        {
+            GetComponent<SpriteRenderer>().sprite = Aeronaves[3];
         }
     }
 

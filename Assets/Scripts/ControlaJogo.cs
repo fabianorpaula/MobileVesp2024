@@ -12,6 +12,10 @@ public class ControlaJogo : MonoBehaviour
 
     private void Start()
     {
+
+        gameLigado = false;
+        Time.timeScale = 0;
+
         //Existe uma Variavel que salva moedas?
         if (PlayerPrefs.HasKey("Moeda"))
         {
@@ -23,8 +27,20 @@ public class ControlaJogo : MonoBehaviour
             //Se Não Existe Crie uma
             PlayerPrefs.SetFloat("Moeda", 0);
         }
-        
-        
+
+        //Existe uma Variavel que salva Nave?
+        if (PlayerPrefs.HasKey("NaveEscolhida"))
+        {
+            //não faça nada
+
+        }
+        else
+        {
+            //Se Não Existe Crie uma
+            PlayerPrefs.SetString("NaveEscolhida", "Basica");
+        }
+
+
     }
 
     public void GanhaPonto(float novoponto)
@@ -55,4 +71,10 @@ public class ControlaJogo : MonoBehaviour
         Time.timeScale = 0;
     }
 
+
+    public void IniciarJogo()
+    {
+        gameLigado = true;
+        Time.timeScale = 1;
+    }
 }
