@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControlaJogo : MonoBehaviour
 {
@@ -76,5 +77,20 @@ public class ControlaJogo : MonoBehaviour
     {
         gameLigado = true;
         Time.timeScale = 1;
+    }
+
+
+
+    public void ReiniciarJogo()
+    {
+        gameLigado = true;
+        Time.timeScale = 1;
+        armadura = 1;
+        TelagameOver.SetActive(false);
+    }
+
+    public void AcabouJogo()
+    {
+        SceneManager.LoadScene(0);
     }
 }
